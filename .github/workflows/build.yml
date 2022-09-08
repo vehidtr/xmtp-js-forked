@@ -13,12 +13,13 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version-file: '.nvmrc'
-      - name: Generate the artifacts
-        uses: skx/github-action-build@master
       - run: |
+          npm run build
           git config --global user.name "vehidtr"
           git config --global user.email "vehid.trtak@gmail.com"
 
-          git add .
-          git commit -m "Testing build"
-          git push
+          git commit -m "Add changes" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          force_with_lease: true
