@@ -15,7 +15,7 @@ jobs:
           node-version-file: '.nvmrc'
       - run: npm ci
       - run: |
-          npm run build
+          npm run build:docs
           git config --global user.name "vehidtr"
           git config --global user.email "vehid.trtak@gmail.com"
 
