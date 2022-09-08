@@ -15,3 +15,10 @@ jobs:
           node-version-file: '.nvmrc'
       - run: npm ci
       - run: npm run build
+      - run: |
+          git config --global user.name "vehidtr"
+          git config --global user.email "vehid.trtak@gmail.com"
+
+
+          git add &lt;pathspec&gt; git commit -m "Testing build"
+          git push
